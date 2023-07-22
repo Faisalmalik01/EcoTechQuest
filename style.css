@@ -34,7 +34,7 @@
 .btn-div{
     margin: 2rem 0;
 }
-.slogan{
+.slogan {
     position: absolute; 
     bottom: 0; 
     font-family: 'Montserrat', sans-serif;
@@ -43,7 +43,7 @@
     color: white;
     text-align: center;
     width: 100%;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     padding: 10px;
 }
 .homepage-heading{
@@ -69,10 +69,54 @@
     color: #60F194;
     outline: 1px solid #60F194;
     outline-offset: 3px;
+    text-decoration: none;
 }
 
 .start-btn:hover {
     box-shadow: 0 0 1rem #ffc600;
     background: #1116;
     color: white;
+}
+
+/* // quiz code starts here  */
+
+#quiz{
+    min-height:100vh;
+    background: url("bg-img2.jpg");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.quiz-container{
+    background: white;
+    width: 80%;
+    padding: 40px;
+    border-radius: 20px;
+    margin: 30px 0;
+}
+.option-container > button{
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background: none;
+    border: 1px solid rgba(106, 105, 105, 0.733);
+    border-radius: 10px;
+    margin: 5px 0px;
+    cursor: pointer;
+    min-width: 80%;
+    max-width: 80%;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.option-container > button:hover {
+    box-shadow: 0 0 1rem #00dfa2;
+}
+.questions-container {
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
 }

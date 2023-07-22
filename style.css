@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,700;1,200;1,300;1,400;1,500&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+#homepage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    background-image: url("bg-img.jpg");
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+.home-page-intro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.home-page-intro * {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.header-text{
+    margin: 2rem 0;
+
+}
+.btn-div{
+    margin: 2rem 0;
+}
+.slogan{
+    position: absolute; 
+    bottom: 0; 
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    width: 100%;
+    background-color: black;
+    padding: 10px;
+}
+.homepage-heading{
+    text-align: center;
+    margin-top: 1.5rem;
+}
+.header-text > h1{
+    color: #60F194;
+}
+.header-text > h2{
+    color: white
+}
+.header-text * {
+    letter-spacing: 0.1cm;
+}
+.start-btn{
+    padding: 10px 20px;
+    font-size: 1.4rem;
+    border-radius: 10px;
+    cursor: pointer;
+    background: none;
+    border: 1px solid #60F194;
+    color: #60F194;
+    outline: 1px solid #60F194;
+    outline-offset: 3px;
+}
+
+.start-btn:hover {
+    box-shadow: 0 0 1rem #ffc600;
+    background: #1116;
+    color: white;
+}

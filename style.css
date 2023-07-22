@@ -153,7 +153,7 @@
 }
 .tip-div {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     width: 100%;
     text-align: center;
     background: aliceblue;
@@ -178,6 +178,16 @@
 @media (max-width: 674px)
 {
     .quiz-container{
+        width: 90%;
         margin: 30px 0px 200px 0px;
+    }
+    .tip-div{
+        font-size: 1rem;
+    }
+    #question{
+        font-size: 1.1rem !important;
+    }
+    .option-container > button{
+        font-size: 1rem;
     }
 }

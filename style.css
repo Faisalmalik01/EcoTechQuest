@@ -4,7 +4,8 @@
     margin: 0;
     box-sizing: border-box;
 }
-#homepage{
+
+#homepage {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,26 +18,30 @@
     background-attachment: fixed;
     position: relative;
 }
-.home-page-intro{
+
+.home-page-intro {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
+
 .home-page-intro * {
     font-family: 'Bebas Neue', sans-serif;
 }
 
-.header-text{
+.header-text {
     margin: 2rem 0;
 
 }
-.btn-div{
+
+.btn-div {
     margin: 2rem 0;
 }
+
 .slogan {
-    position: absolute; 
-    bottom: 0; 
+    position: absolute;
+    bottom: 0;
     font-family: 'Montserrat', sans-serif;
     font-style: italic;
     font-size: 16px;
@@ -46,20 +51,25 @@
     background-color: rgb(0, 0, 0);
     padding: 10px;
 }
-.homepage-heading{
+
+.homepage-heading {
     text-align: center;
     margin-top: 1.5rem;
 }
-.header-text > h1{
+
+.header-text>h1 {
     color: #60F194;
 }
-.header-text > h2{
+
+.header-text>h2 {
     color: white
 }
+
 .header-text * {
     letter-spacing: 0.1cm;
 }
-.start-btn{
+
+.start-btn {
     padding: 10px 20px;
     font-size: 1.4rem;
     border-radius: 10px;
@@ -79,10 +89,44 @@
     color: white;
 }
 
+.wish {
+    margin: 30px 0px;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    animation: fadeInOut 4s infinite;
+}
+
+#mlh {
+    background: linear-gradient(to right, #E93227, #1853A0, #f8b92a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hb {
+    background: linear-gradient(to right, #426C37, #00dfa2, #426C37);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: brightness(1.5);
+}
+
+@keyframes fadeInOut {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
 /*  quiz code starts here  */
 
-#quiz{
-    min-height:100vh;
+#quiz {
+    min-height: 100vh;
     background: url("bg-img2.jpg");
     background-size: cover;
     background-position: 50% 50%;
@@ -94,14 +138,16 @@
     flex-direction: column;
     position: relative;
 }
-.quiz-container{
+
+.quiz-container {
     background: white;
     width: 80%;
     padding: 40px;
     border-radius: 20px;
     margin: 30px 0px 150px 0px;
 }
-.option-container > button{
+
+.option-container>button {
     padding: 10px 20px;
     font-size: 1.2rem;
     background: none;
@@ -115,9 +161,10 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.option-container > button:hover {
+.option-container>button:hover {
     box-shadow: 0 0 1rem #426C37;
 }
+
 .questions-container {
     margin-bottom: 15px;
     font-family: 'Montserrat', sans-serif;
@@ -128,29 +175,34 @@
     display: flex;
     justify-content: center;
 }
+
 #next-btn {
     padding: 10px 20px;
     font-size: 1.2rem;
-    font-family: 'Montserrat',sans-serif;
+    font-family: 'Montserrat', sans-serif;
     border: none;
     border-radius: 10px;
     font-weight: 500;
 }
+
 #next-btn:hover {
     box-shadow: 0 0 1rem #426C37;
 }
+
 #score {
-    color:white;
+    color: white;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.4rem;
     letter-spacing: 0.1cm;
 }
+
 .score-div {
     margin: 20px;
     display: flex;
     justify-content: center;
     text-align: center;
 }
+
 .tip-div {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
@@ -167,27 +219,33 @@
 ::-webkit-scrollbar {
     width: 15px;
 }
+
 ::-webkit-scrollbar-track {
     background: #d1e5ff;
 }
+
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(#426C37, #00dfa2, #426C37);
     border-radius: 5px;
 }
 
-@media (max-width: 674px)
-{
-    .quiz-container{
+/* media query for mobile sizes  */
+
+@media (max-width: 674px) {
+    .quiz-container {
         width: 90%;
         margin: 30px 0px 200px 0px;
     }
-    .tip-div{
+
+    .tip-div {
         font-size: 1rem;
     }
-    #question{
+
+    #question {
         font-size: 1.1rem !important;
     }
-    .option-container > button{
+
+    .option-container>button {
         font-size: 1rem;
     }
 }

@@ -1,8 +1,13 @@
-gsap.from(".homepage-heading",{
+// Check if it's MLH's birthday week and wish them.
+window.addEventListener('DOMContentLoaded', checkMLHBirthdayWeek);
+
+// Heading Animation
+gsap.from(".homepage-heading", {
     stagger: 0.7,
     x: -1200
 });
 
+// Initialize constants and variables
 // Array of Questions
 const questions = [
     {
@@ -106,27 +111,30 @@ const questions = [
         'tip': "Educate and inspire others about sustainability to create a collective impact for a greener future."
     }
 ];
-
-// Array containing indices of asked questions
 const askedQuestions = [];
 let score = 0;
 const nextBtn = document.querySelector('#next-btn');
-
 const startBtn = document.querySelector('.start-btn');
+
+// Attach event listeners to start button and next button
 startBtn.addEventListener('click', () => {
     resetValues();
     showQuizSection();
 })
 
-// Make Quiz Section Visible
-function showQuizSection(){
-    document.querySelector('#quiz').style.display = 'flex';
+nextBtn.addEventListener('click', () => {
+    askQuestion();
+});
 
+// Make Quiz Section Visible
+function showQuizSection() {
+    document.querySelector('#quiz').style.display = 'flex';
     askQuestion();
 }
 
 // Ask Question: Add question and option text content to DOM
-function askQuestion(){
+function askQuestion() {
+    // Select required elements
     const question = document.querySelector('#question');
     const options = document.querySelectorAll('.options');
     const optionA = document.querySelector('button[data-opt="a"]');
@@ -140,6 +148,8 @@ function askQuestion(){
         option.style.background = 'white';
         option.style.color = 'black';
     });
+
+    // Generate question index that hasn't been asked yet
     let id;
     do {
         id = randomIndex(0, questions.length - 1);
@@ -148,12 +158,14 @@ function askQuestion(){
 
     askedQuestions.push(id);
 
+    // Check if current question is the last question
     if (askedQuestions.length == 5) {
         nextBtnDiv.style.display = 'none';
     } else {
         nextBtnDiv.style.display = 'flex';
     }
 
+    // Update Question and Options
     let ques = questions[id];
     question.dataset['quesId'] = id;
     question.textContent = `Q:  ${ques['question']}`;
@@ -161,27 +173,31 @@ function askQuestion(){
     optionB.textContent = `b) ${ques['options']['b']}`;
     optionC.textContent = `c) ${ques['options']['c']}`;
 
+    // Add Sustainability tip
     tip.innerHTML = ques['tip'];
+
+    // Check for answers if any option is clicked
     options.forEach(option => option.addEventListener('click', checkAnswer, { once: true }));
-    
 }
 
-nextBtn.addEventListener('click', () => {
-    askQuestion();
-});
 
-// Check Answer
-function checkAnswer(e){
+
+// Function for checking answer of questions
+function checkAnswer(e) {
+    // Select required elements
     const question = document.querySelector('#question');
     const selectedOption = e.target;
     const answer = selectedOption.dataset['opt'];
     const options = document.querySelectorAll('.options');
     const questionId = question.dataset['quesId'];
     const correctAnswer = questions[questionId]['answer'];
+
+    // Increment score if answer is correct
     if (answer === correctAnswer) {
         score++;
     }
 
+    // Update colors of options according to answer selection
     options.forEach((option) => {
         if (answer === option.dataset['opt']) {
             option.textContent += `   (Your Answer)`;
@@ -189,15 +205,14 @@ function checkAnswer(e){
         if (option.dataset['opt'] === correctAnswer) {
             option.style.background = '#426C37';
             option.style.color = '#fff';
-        } else
-        {
+        } else {
             option.style.background = '#c2191f';
             option.style.color = '#fff';
         }
         option.removeEventListener('click', checkAnswer);
-
     });
 
+    // Check if all questions were asked
     if (askedQuestions.length == 5) {
         let scoreText = document.querySelector('#score');
         scoreText.style.display = 'block';
@@ -220,15 +235,30 @@ function checkAnswer(e){
     }
 }
 
+// Function for generating random index between min and max value
 function randomIndex(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function resetValues(){
+// Function for resetting values
+function resetValues() {
     // Clear all values of in asked questions array
     askedQuestions.length = 0;
 
     // Set Score to 0
     score = 0;
     document.querySelector('#score').style.display = 'none';
+}
+
+// Function for determining the appearance of Birthday wish for MLH
+function checkMLHBirthdayWeek() {
+    const wish = document.querySelector('.wish');
+    const now = new Date();
+    const month = now.getMonth();
+    const day = now.getDate();
+    if (day > 20 && day < 31 && month == 6) {
+        wish.style.display = 'block';
+    } else {
+        wish.style.display = 'none';
+    }
 }

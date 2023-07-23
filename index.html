@@ -1,56 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Eco Tech Quest">
+    <meta name="author" content="Faisal Malik, Rayees Rather, Aqib Javid">
+    <meta name="description"
+        content="Eco Tech Quest is an interactive quiz platform that challenges users with questions related to sustainability and technology. Each question presents multiple-choice options, allowing participants to test their knowledge and understanding of sustainable practices. Users can click on their preferred option, and the platform provides real-time feedback, indicating whether their answer is correct or not. At the end of the quiz, users receive a score based on their correct answers and are presented with a personalized message based on their performance.">
     <title>EchoTechQuest</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.png" type="image/png">
 </head>
+
 <body>
+    <!-- homepage section  -->
+
     <section id="homepage">
         <div class="home-page-intro">
 
+            <!-- home page headings -->
             <div class="header-text">
                 <h1 class="homepage-heading homepage-header" style="font-size: 3.5rem;">ECO TECH QUEST</h1>
-                <h2 class="homepage-heading homepage-para" style="font-size: 2.5rem;">PAVING THE PATH TO A GREENER TOMORROW</h2>
+                <h2 class="homepage-heading homepage-para" style="font-size: 2.5rem;">PAVING THE PATH TO A GREENER
+                    TOMORROW</h2>
             </div>
 
+            <!-- start button for quiz  -->
             <div class="btn-div">
                 <a href="#quiz" class="start-btn">START QUIZ</a>
             </div>
+
         </div>
-        
+
+        <!-- Mlh Birthday wish  -->
+        <p class="wish"><span class="hb">Hacky Birthday</span> <br><span id="mlh">MLH</span><span
+                id="emojis">🥳🎉</span>
+        </p>
+
+        <!-- slogan for homepage  -->
         <div class="slogan">
             <p>"Grow Greener, Sustain Stronger."</p>
         </div>
+
     </section>
 
+
+    <!-- quiz section  -->
+
     <section id="quiz">
+
+        <!-- user score div  -->
         <div class="score-div">
             <h1 id="score"></h1>
         </div>
         <div class="quiz-container">
 
+            <!-- question  -->
             <div class="questions-container">
                 <h2 class="quiz-quiz-heading" id="question"></h2>
             </div>
 
+            <!-- question options  -->
             <div class="option-container">
                 <button class="option1 options" data-opt="a">a) </button>
                 <button class="option2 options" data-opt="b">b) </button>
                 <button class="option3 options" data-opt="c">c) </button>
             </div>
 
+            <!-- next question btn  -->
             <div class="question-navigation">
                 <button id="next-btn">Next</button>
             </div>
         </div>
 
+        <!-- tip on every question  -->
         <div class="tip-div">
             <p id="tip"></p>
         </div>
     </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Gsap cdn and js link  -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="index.js"></script>
 </body>
+
 </html>
